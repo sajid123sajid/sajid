@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#D4A017">
+<title>Shopping Cart — ZUPONA</title>
+<link rel="stylesheet" href="css/style.css">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='8' fill='%23D4A017'/><text x='16' y='23' font-size='20' font-family='Arial' font-weight='bold' fill='white' text-anchor='middle'>Z</text></svg>">
+</head>
+<body data-page="cart">
+
+<header id="site-header"></header>
+
+<div class="page-head">
+  <div class="container">
+    <nav class="crumbs"><a href="index.html">Home</a> <span>/</span> <span>Shopping cart</span></nav>
+    <h1>Shopping Cart</h1>
+    <p class="text-muted" id="cartCount" style="font-size:13.5px"></p>
+  </div>
+</div>
+
+<main class="container">
+
+  <div class="empty hide" id="cartEmpty" style="margin-top:18px">
+    <div style="font-size:48px">🛒</div>
+    <h3>Your cart is empty</h3>
+    <p>Looks like you have not added anything yet. Explore our best sellers and flash deals.</p>
+    <a class="btn btn-gold" href="shop.html">Continue shopping</a>
+  </div>
+
+  <div id="cartBody">
+    <div class="cart-layout">
+      <section class="panel">
+        <div class="flex-between" style="margin-bottom:6px">
+          <h3 style="margin:0">Items in your cart</h3>
+          <button class="link-danger" id="clearCart">Clear cart</button>
+        </div>
+        <div id="cartTable"></div>
+        <div class="flex-between mt-16">
+          <a class="btn btn-ghost btn-sm" href="shop.html">← Continue shopping</a>
+          <span class="text-muted" style="font-size:12.5px">Prices include VAT where applicable</span>
+        </div>
+      </section>
+
+      <aside>
+        <div class="panel">
+          <h3>Order Summary</h3>
+
+          <div class="ship-bar"><i id="freeShipBar" style="width:0%"></i></div>
+          <p class="text-muted" id="freeShipNote" style="font-size:12.5px"></p>
+
+          <div class="coupon-row">
+            <input id="couponInput" placeholder="Coupon code">
+            <button class="btn btn-dark btn-sm" id="applyCoupon">Apply</button>
+          </div>
+          <p class="text-muted" style="font-size:12px;margin-top:-4px">Try <strong>ZUPONA10</strong>, <strong>EID25</strong> or <strong>WELCOME5</strong></p>
+
+          <div class="summary-row"><span>Subtotal</span><span id="sumSubtotal">Tk 0</span></div>
+          <div class="summary-row"><span>Coupon discount</span><span id="sumDiscount" style="color:var(--green)">− Tk 0</span></div>
+          <div class="summary-row"><span>Delivery</span><span id="sumShipping">Tk 0</span></div>
+          <div class="summary-row total"><span>Total</span><span id="sumTotal">Tk 0</span></div>
+
+          <a class="btn btn-primary btn-block btn-lg mt-16" href="checkout.html">Proceed to Checkout</a>
+          <div class="pay-row" style="justify-content:center;margin-top:12px">
+            <span style="background:#F3F4F6">bKash</span><span style="background:#F3F4F6">Nagad</span>
+            <span style="background:#F3F4F6">VISA</span><span style="background:#F3F4F6">COD</span>
+          </div>
+        </div>
+
+        <div class="panel">
+          <h3>Buyer protection</h3>
+          <p class="text-muted" style="font-size:13px;margin:0">Full refund if the item is not delivered, damaged or does not
+          match the description. Covered for 30 days after delivery.</p>
+        </div>
+      </aside>
+    </div>
+  </div>
+
+  <section class="section">
+    <div class="section-head"><div><h2>Frequently bought together</h2><p class="sub">Best discounts right now</p></div></div>
+    <div class="prod-rail" id="cartSuggest"></div>
+  </section>
+</main>
+
+<div id="site-footer"></div>
+<div id="site-extras"></div>
+<script src="js/app.js"></script>
+</body>
+</html>

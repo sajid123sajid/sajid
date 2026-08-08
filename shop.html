@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#D4A017">
+<title>Shop All Products — ZUPONA</title>
+<link rel="stylesheet" href="css/style.css">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='8' fill='%23D4A017'/><text x='16' y='23' font-size='20' font-family='Arial' font-weight='bold' fill='white' text-anchor='middle'>Z</text></svg>">
+</head>
+<body data-page="shop">
+
+<header id="site-header"></header>
+
+<div class="page-head">
+  <div class="container">
+    <nav class="crumbs"><a href="index.html">Home</a> <span>/</span> <span>All products</span></nav>
+    <h1>All Products</h1>
+    <p class="text-muted" id="searchEcho" style="font-size:13.5px"></p>
+  </div>
+</div>
+
+<main class="container">
+  <div class="layout">
+
+    <!-- FILTERS -->
+    <aside class="filters" id="filters">
+      <div class="panel only-mobile" style="display:flex;align-items:center;justify-content:space-between">
+        <strong>Filters</strong>
+        <button class="icon-btn" data-close aria-label="Close filters">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M6 6l12 12M18 6L6 18"/></svg>
+        </button>
+      </div>
+
+      <div class="panel">
+        <div class="flex-between" style="margin-bottom:10px">
+          <h3 style="margin:0">Categories</h3>
+          <button id="resetAll" class="link-danger">Reset all</button>
+        </div>
+        <ul class="filter-list" id="fCats"></ul>
+      </div>
+
+      <div class="panel">
+        <h3>Price range (Tk)</h3>
+        <div class="range-row">
+          <input id="pMin" type="number" min="0" placeholder="Min">
+          <span class="text-muted">–</span>
+          <input id="pMax" type="number" min="0" placeholder="Max">
+        </div>
+        <button class="btn btn-ghost btn-block btn-sm mt-16" id="applyPrice">Apply price</button>
+      </div>
+
+      <div class="panel">
+        <h3>Brand</h3>
+        <ul class="filter-list" id="fBrands" style="max-height:230px;overflow:auto"></ul>
+      </div>
+
+      <div class="panel">
+        <h3>Customer rating</h3>
+        <ul class="filter-list" id="fRating"></ul>
+      </div>
+    </aside>
+
+    <!-- RESULTS -->
+    <section>
+      <div class="toolbar">
+        <button class="btn btn-ghost btn-sm only-mobile" data-open="filters">
+          <svg viewBox="0 0 24 24" width="17" height="17" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round"><path d="M4 6h16M7 12h10M10 18h4"/></svg>
+          Filters
+        </button>
+        <span class="count-txt" id="resultCount"></span>
+        <div style="display:flex;gap:8px;align-items:center;margin-left:auto">
+          <label class="sr-only" for="sortSel">Sort by</label>
+          <select id="sortSel">
+            <option value="popular">Most popular</option>
+            <option value="new">Newest first</option>
+            <option value="low">Price: low to high</option>
+            <option value="high">Price: high to low</option>
+            <option value="rating">Top rated</option>
+            <option value="discount">Biggest discount</option>
+          </select>
+          <div class="view-toggle only-desktop" style="display:flex">
+            <button data-view="grid" class="is-active" aria-label="Grid view">
+              <svg viewBox="0 0 24 24" width="17" height="17" fill="none" stroke="currentColor" stroke-width="1.9"><rect x="3.5" y="3.5" width="7" height="7" rx="2"/><rect x="13.5" y="3.5" width="7" height="7" rx="2"/><rect x="3.5" y="13.5" width="7" height="7" rx="2"/><rect x="13.5" y="13.5" width="7" height="7" rx="2"/></svg>
+            </button>
+            <button data-view="list" aria-label="List view">
+              <svg viewBox="0 0 24 24" width="17" height="17" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 6h16M4 12h16M4 18h16"/></svg>
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <div id="activeChips" style="display:flex;gap:8px;flex-wrap:wrap;margin-bottom:12px"></div>
+
+      <div class="prod-grid" id="shopGrid"></div>
+
+      <div class="empty hide" id="emptyState">
+        <h3>No products matched your filters</h3>
+        <p>Try removing a filter or searching for something else.</p>
+      </div>
+
+      <div class="pagination" id="pagination"></div>
+    </section>
+  </div>
+</main>
+
+<div id="site-footer"></div>
+<div id="site-extras"></div>
+<script src="js/app.js"></script>
+</body>
+</html>

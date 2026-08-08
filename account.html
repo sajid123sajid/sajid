@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#D4A017">
+<title>My Account — ZUPONA</title>
+<link rel="stylesheet" href="css/style.css">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='8' fill='%23D4A017'/><text x='16' y='23' font-size='20' font-family='Arial' font-weight='bold' fill='white' text-anchor='middle'>Z</text></svg>">
+</head>
+<body data-page="account">
+
+<header id="site-header"></header>
+
+<div class="page-head">
+  <div class="container">
+    <nav class="crumbs"><a href="index.html">Home</a> <span>/</span> <span>My account</span></nav>
+    <h1>My Account</h1>
+  </div>
+</div>
+
+<main class="container">
+  <div class="acc-layout">
+
+    <aside class="acc-nav">
+      <div class="acc-user">
+        <span class="acc-avatar">R</span>
+        <span><strong>Rakib Hasan</strong><br><small class="text-muted">rakib@example.com</small></span>
+      </div>
+      <button data-acctab="dashboard" class="is-active">📊 Dashboard</button>
+      <button data-acctab="orders">📦 My orders</button>
+      <button data-acctab="wishlist">❤ Wishlist</button>
+      <button data-acctab="address">📍 Addresses</button>
+      <button data-acctab="profile">👤 Profile settings</button>
+      <button data-acctab="signin">🔐 Sign in / Register</button>
+    </aside>
+
+    <section>
+      <!-- DASHBOARD -->
+      <div data-acc="dashboard">
+        <div class="stats" id="accStats"></div>
+        <div class="panel mt-16">
+          <h3>Welcome back 👋</h3>
+          <p class="text-muted" style="font-size:14px;margin:0">Track orders, manage your wishlist and update delivery
+          addresses from here. Everything is stored on this device, so your cart and wishlist stay put when you come back.</p>
+        </div>
+        <div class="panel">
+          <h3>Membership perks</h3>
+          <div class="addr-grid">
+            <div class="addr"><span class="pill">Free delivery</span><br>On every order above Tk 999, nationwide.</div>
+            <div class="addr"><span class="pill">Reward points</span><br>Earn 120 points per completed order.</div>
+            <div class="addr"><span class="pill">Early access</span><br>Shop flash deals 2 hours before everyone else.</div>
+            <div class="addr"><span class="pill">Priority support</span><br>Dedicated line for members, 24/7.</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ORDERS -->
+      <div data-acc="orders" class="hide">
+        <div class="panel">
+          <h3>Order history</h3>
+          <p class="text-muted" style="font-size:13px">Orders you place in this browser appear here instantly.</p>
+        </div>
+        <div id="accOrders" class="mt-16"></div>
+      </div>
+
+      <!-- WISHLIST -->
+      <div data-acc="wishlist" class="hide">
+        <div class="panel" style="margin-bottom:14px">
+          <h3>My wishlist</h3>
+          <p class="text-muted" style="font-size:13px;margin:0">Saved products stay here until you move them to the cart.</p>
+        </div>
+        <div id="accWish"></div>
+      </div>
+
+      <!-- ADDRESSES -->
+      <div data-acc="address" class="hide">
+        <div class="panel">
+          <div class="flex-between" style="margin-bottom:12px">
+            <h3 style="margin:0">Saved addresses</h3>
+            <button class="btn btn-ghost btn-sm" onclick="ZUPONA.toast('Address form opened')">+ Add new</button>
+          </div>
+          <div class="addr-grid">
+            <div class="addr">
+              <span class="pill">Default</span><br>
+              <strong>Home</strong><br>Rakib Hasan · 01712 345678<br>
+              House 12, Road 7, Banani, Dhaka 1213
+            </div>
+            <div class="addr">
+              <strong>Office</strong><br>Rakib Hasan · 01712 345678<br>
+              Level 6, Gulshan Tower, Gulshan 1, Dhaka 1212
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- PROFILE -->
+      <div data-acc="profile" class="hide">
+        <div class="panel">
+          <h3>Profile settings</h3>
+          <form class="acc-form form-grid">
+            <div class="field"><label>Full name</label><input value="Rakib Hasan"></div>
+            <div class="field"><label>Mobile number</label><input value="01712345678"></div>
+            <div class="field"><label>Email</label><input type="email" value="rakib@example.com"></div>
+            <div class="field"><label>Date of birth</label><input type="date" value="1996-04-12"></div>
+            <div class="field full"><label>Change password</label><input type="password" placeholder="New password"></div>
+            <div class="field full"><button class="btn btn-primary" type="submit">Save changes</button></div>
+          </form>
+        </div>
+      </div>
+
+      <!-- SIGN IN -->
+      <div data-acc="signin" class="hide">
+        <div class="cart-layout">
+          <div class="panel">
+            <h3>Sign in</h3>
+            <form class="acc-form form-grid">
+              <div class="field full"><label>Email or mobile</label><input required placeholder="you@example.com"></div>
+              <div class="field full"><label>Password</label><input type="password" required placeholder="••••••••"></div>
+              <div class="field full flex-between">
+                <label class="check"><input type="checkbox" checked> <span>Keep me signed in</span></label>
+                <a href="#" style="font-size:13px;color:var(--blue);font-weight:700">Forgot password?</a>
+              </div>
+              <div class="field full"><button class="btn btn-primary btn-block" type="submit">Sign in</button></div>
+            </form>
+          </div>
+          <div class="panel">
+            <h3>New to Zupona?</h3>
+            <form class="acc-form form-grid">
+              <div class="field full"><label>Full name</label><input required placeholder="Your name"></div>
+              <div class="field full"><label>Mobile number</label><input required type="tel" placeholder="01XXXXXXXXX"></div>
+              <div class="field full"><label>Password</label><input type="password" required placeholder="Create a password"></div>
+              <div class="field full"><button class="btn btn-gold btn-block" type="submit">Create account</button></div>
+            </form>
+            <p class="text-muted" style="font-size:12px;margin-top:10px">By registering you agree to our terms of service and privacy policy.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
+</main>
+
+<div id="site-footer"></div>
+<div id="site-extras"></div>
+<script src="js/app.js"></script>
+</body>
+</html>
