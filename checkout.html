@@ -2,131 +2,118 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<meta name="theme-color" content="#D4A017">
-<title>Checkout — ZUPONA</title>
-<link rel="stylesheet" href="css/style.css">
-<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='8' fill='%23D4A017'/><text x='16' y='23' font-size='20' font-family='Arial' font-weight='bold' fill='white' text-anchor='middle'>Z</text></svg>">
+<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#FAF8F4" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#0B0C0F" media="(prefers-color-scheme: dark)">
+<meta name="description" content="Zupona — trusted online shop. Authentic beauty, fashion, accessories, baby care and toys with fast nationwide delivery and 30-day returns.">
+<title>Checkout — Zupona</title>
+<link rel="stylesheet" href="css/zupona.css">
+<link rel="manifest" href="manifest.json">
+<link rel="icon" href="icon.svg">
+<link rel="apple-touch-icon" href="icon.svg">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-title" content="Zupona">
 </head>
 <body data-page="checkout">
 
-<header id="site-header"></header>
+<header id="hd"></header>
 
-<div class="page-head">
-  <div class="container">
-    <nav class="crumbs"><a href="index.html">Home</a> <span>/</span> <a href="cart.html">Cart</a> <span>/</span> <span>Checkout</span></nav>
-    <h1>Secure Checkout</h1>
+<main class="wrap">
+  <div class="ph">
+    <nav class="crumb"><a href="index.html">Home</a><span>/</span><a href="cart.html">Cart</a><span>/</span><span>Checkout</span></nav>
+    <h1>Secure checkout</h1>
   </div>
-</div>
-
-<main class="container">
 
   <div class="steps">
-    <span class="step-dot is-active" data-dot="1"><i>1</i> Shipping</span>
-    <span class="step-dot" data-dot="2"><i>2</i> Payment</span>
-    <span class="step-dot" data-dot="3"><i>3</i> Review</span>
-    <span class="step-dot" data-dot="4"><i>4</i> Done</span>
+    <span class="st on" data-d="1"><i>1</i>Shipping</span>
+    <span class="st" data-d="2"><i>2</i>Payment</span>
+    <span class="st" data-d="3"><i>3</i>Review</span>
+    <span class="st" data-d="4"><i>4</i>Done</span>
   </div>
 
-  <div class="cart-layout">
+  <div class="two-r">
     <section>
-
-      <!-- STEP 1 -->
-      <div class="panel" data-step="1">
+      <div class="pnl" data-step="1">
         <h3>Delivery information</h3>
-        <form id="shipForm" class="form-grid" onsubmit="return false">
-          <div class="field"><label for="fName">Full name *</label><input id="fName" required placeholder="e.g. Rakib Hasan"></div>
-          <div class="field"><label for="fPhone">Mobile number *</label><input id="fPhone" required type="tel" pattern="[0-9+ -]{6,}" placeholder="01XXXXXXXXX"></div>
-          <div class="field full"><label for="fEmail">Email address</label><input id="fEmail" type="email" placeholder="you@example.com"></div>
-          <div class="field full"><label for="fAddress">Street address *</label><input id="fAddress" required placeholder="House, road, area"></div>
-          <div class="field"><label for="fCity">City / District *</label>
-            <select id="fCity" required>
-              <option value="">Select</option>
-              <option>Dhaka</option><option>Chattogram</option><option>Sylhet</option>
-              <option>Khulna</option><option>Rajshahi</option><option>Barishal</option>
-              <option>Rangpur</option><option>Mymensingh</option>
-            </select>
-          </div>
-          <div class="field"><label for="fZip">Postal code</label><input id="fZip" placeholder="1213"></div>
-          <div class="field full"><label for="fNote">Delivery note (optional)</label><textarea id="fNote" placeholder="Landmark, preferred delivery time..."></textarea></div>
+        <form id="shipF" class="fg" onsubmit="return false">
+          <div class="fd"><label for="fName">Full name *</label><input id="fName" required placeholder="e.g. Rakib Hasan"></div>
+          <div class="fd"><label for="fPhone">Mobile number *</label><input id="fPhone" type="tel" required pattern="[0-9+ -]{6,}" placeholder="01XXXXXXXXX"></div>
+          <div class="fd w"><label for="fMail">Email address</label><input id="fMail" type="email" placeholder="you@example.com"></div>
+          <div class="fd w"><label for="fAddr">Street address *</label><input id="fAddr" required placeholder="House, road, area"></div>
+          <div class="fd"><label for="fCity">City / district *</label><select id="fCity" required>
+            <option value="">Select</option><option>Dhaka</option><option>Chattogram</option><option>Sylhet</option>
+            <option>Khulna</option><option>Rajshahi</option><option>Barishal</option><option>Rangpur</option><option>Mymensingh</option>
+          </select></div>
+          <div class="fd"><label for="fZip">Postal code</label><input id="fZip" placeholder="1213"></div>
+          <div class="fd w"><label for="fNote">Delivery note</label><textarea id="fNote" placeholder="Landmark, preferred time…"></textarea></div>
         </form>
-        <div class="flex-between mt-16">
-          <a class="btn btn-ghost btn-sm" href="cart.html">← Back to cart</a>
-          <button class="btn btn-primary" data-next>Continue to payment</button>
+        <div style="display:flex;justify-content:space-between;margin-top:18px;gap:12px;flex-wrap:wrap">
+          <a class="btn btn-line btn-sm" href="cart.html">← Back to cart</a>
+          <button class="btn btn-ink" data-next>Continue to payment</button>
         </div>
       </div>
 
-      <!-- STEP 2 -->
-      <div class="panel hide" data-step="2">
+      <div class="pnl hide" data-step="2">
         <h3>Payment method</h3>
-        <button class="pay-opt is-active" data-pay="Cash on delivery" data-note="Pay the rider in cash when your parcel arrives.">
-          <span class="p-ic">COD</span><span><strong>Cash on delivery</strong><small>Pay when you receive the parcel</small></span>
-        </button>
-        <button class="pay-opt" data-pay="bKash" data-note="You will be redirected to bKash to confirm the payment.">
-          <span class="p-ic" style="background:#E2136E;color:#fff">bK</span><span><strong>bKash</strong><small>Instant mobile payment</small></span>
-        </button>
-        <button class="pay-opt" data-pay="Nagad" data-note="You will be redirected to Nagad to confirm the payment.">
-          <span class="p-ic" style="background:#F6821F;color:#fff">Ng</span><span><strong>Nagad</strong><small>Instant mobile payment</small></span>
-        </button>
-        <button class="pay-opt" data-pay="Card" data-note="We accept VISA, Mastercard and AMEX. Payments are 3-D Secure protected.">
-          <span class="p-ic" style="background:#1A1F71;color:#fff">💳</span><span><strong>Credit / Debit card</strong><small>VISA · Mastercard · AMEX</small></span>
-        </button>
-        <p class="text-muted" id="payNote" style="font-size:13px">Pay the rider in cash when your parcel arrives.</p>
-        <div class="flex-between mt-16">
-          <button class="btn btn-ghost btn-sm" data-back>← Back</button>
-          <button class="btn btn-primary" data-next>Review order</button>
+        <button class="pay on" data-pay="Cash on delivery" data-note="Pay the rider in cash when your parcel arrives.">
+          <i>COD</i><span><b>Cash on delivery</b><small>Pay when you receive it</small></span></button>
+        <button class="pay" data-pay="bKash" data-note="You'll be redirected to bKash to confirm.">
+          <i style="background:#E2136E;color:#fff">bK</i><span><b>bKash</b><small>Instant mobile payment</small></span></button>
+        <button class="pay" data-pay="Nagad" data-note="You'll be redirected to Nagad to confirm.">
+          <i style="background:#F6821F;color:#fff">Ng</i><span><b>Nagad</b><small>Instant mobile payment</small></span></button>
+        <button class="pay" data-pay="Card" data-note="VISA, Mastercard and AMEX, 3-D Secure protected.">
+          <i style="background:#1A1F71;color:#fff">💳</i><span><b>Credit / debit card</b><small>VISA · Mastercard · AMEX</small></span></button>
+        <p style="font-size:12.5px;color:var(--ink-3);margin-top:8px" id="payNote">Pay the rider in cash when your parcel arrives.</p>
+        <div style="display:flex;justify-content:space-between;margin-top:18px">
+          <button class="btn btn-line btn-sm" data-back>← Back</button>
+          <button class="btn btn-ink" data-next>Review order</button>
         </div>
       </div>
 
-      <!-- STEP 3 -->
-      <div class="panel hide" data-step="3">
+      <div class="pnl hide" data-step="3">
         <h3>Review &amp; place order</h3>
-        <p class="text-muted" style="font-size:13.5px">Please confirm your items and delivery details on the right.
-        By placing this order you agree to Zupona's terms of service and return policy.</p>
-        <label class="check mt-16"><input type="checkbox" checked> <span>Email me order updates and delivery notifications</span></label>
-        <label class="check" style="margin-top:8px"><input type="checkbox"> <span>Save this address for faster checkout next time</span></label>
-        <div class="flex-between mt-16">
-          <button class="btn btn-ghost btn-sm" data-back>← Back</button>
-          <button class="btn btn-gold btn-lg" id="placeOrder">Place order</button>
+        <p style="font-size:13px;color:var(--ink-3)">Confirm your items and delivery details in the summary. By placing this order you agree to Zupona's terms and return policy.</p>
+        <label class="ck" style="margin-top:16px"><input type="checkbox" checked><span>Email me order updates</span></label>
+        <label class="ck"><input type="checkbox"><span>Save this address for next time</span></label>
+        <div style="display:flex;justify-content:space-between;margin-top:18px">
+          <button class="btn btn-line btn-sm" data-back>← Back</button>
+          <button class="btn btn-gold" id="place">Place order</button>
         </div>
       </div>
 
-      <!-- STEP 4 -->
-      <div class="panel hide" data-step="4">
-        <div class="success">
-          <div class="tick">✓</div>
-          <h2>Thank you — your order is confirmed</h2>
-          <p class="text-muted">Order <strong id="okId"></strong> · Total <strong id="okTotal"></strong></p>
-          <p class="text-muted">We have sent the confirmation to your email. You can follow the delivery status from your account.</p>
-          <div style="display:flex;gap:10px;justify-content:center;flex-wrap:wrap;margin-top:16px">
-            <a class="btn btn-primary" href="account.html?tab=orders">Track my order</a>
-            <a class="btn btn-ghost" href="shop.html">Continue shopping</a>
+      <div class="pnl hide" data-step="4">
+        <div class="done">
+          <i>✓</i>
+          <h2 style="font-size:23px">Thank you — your order is confirmed</h2>
+          <p style="color:var(--ink-3);font-size:13.5px;margin-top:10px">Order <b id="okId"></b> · Total <b id="okTot"></b></p>
+          <p style="color:var(--ink-3);font-size:13px;margin-top:6px">We've emailed your confirmation. Track delivery from your account.</p>
+          <div style="display:flex;gap:10px;justify-content:center;flex-wrap:wrap;margin-top:20px">
+            <a class="btn btn-ink" href="account.html?tab=orders">Track my order</a>
+            <a class="btn btn-line" href="shop.html">Continue shopping</a>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- SUMMARY -->
     <aside>
-      <div class="panel">
+      <div class="pnl">
         <h3>Your order</h3>
         <div id="coItems"></div>
-        <div class="summary-row" style="margin-top:10px"><span>Subtotal</span><span id="coSub">Tk 0</span></div>
-        <div class="summary-row"><span>Coupon discount</span><span id="coDisc" style="color:var(--green)">− Tk 0</span></div>
-        <div class="summary-row"><span>Delivery</span><span id="coShip">Tk 0</span></div>
-        <div class="summary-row total"><span>Total payable</span><span id="coTotal">Tk 0</span></div>
+        <div class="sr-" style="margin-top:12px"><span>Subtotal</span><span id="coSub">Tk 0</span></div>
+        <div class="sr-"><span>Coupon discount</span><span id="coDisc" style="color:var(--ok)">− Tk 0</span></div>
+        <div class="sr-"><span>Delivery</span><span id="coShip">Tk 0</span></div>
+        <div class="sr- tot"><span>Total</span><span id="coTot">Tk 0</span></div>
       </div>
-      <div class="panel">
+      <div class="pnl">
         <h3>Need help?</h3>
-        <p class="text-muted" style="font-size:13px;margin:0">Call <strong>+880 961 000 0000</strong> (9:00–22:00) or chat with us
-        from the help center. Orders placed before 6 PM are dispatched the same day.</p>
+        <p style="font-size:12.5px;color:var(--ink-3)">Call +880 961 000 0000 (9am–10pm) or message us on WhatsApp. Orders placed before 6 PM are dispatched the same day.</p>
       </div>
     </aside>
   </div>
 </main>
 
-<div id="site-footer"></div>
-<div id="site-extras"></div>
-<script src="js/app.js"></script>
+<div id="ft"></div>
+<div id="xt"></div>
+<script src="js/zupona.js"></script>
 </body>
 </html>

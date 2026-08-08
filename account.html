@@ -2,137 +2,122 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<meta name="theme-color" content="#D4A017">
-<title>My Account — ZUPONA</title>
-<link rel="stylesheet" href="css/style.css">
-<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='8' fill='%23D4A017'/><text x='16' y='23' font-size='20' font-family='Arial' font-weight='bold' fill='white' text-anchor='middle'>Z</text></svg>">
+<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#FAF8F4" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#0B0C0F" media="(prefers-color-scheme: dark)">
+<meta name="description" content="Zupona — trusted online shop. Authentic beauty, fashion, accessories, baby care and toys with fast nationwide delivery and 30-day returns.">
+<title>My Account — Zupona</title>
+<link rel="stylesheet" href="css/zupona.css">
+<link rel="manifest" href="manifest.json">
+<link rel="icon" href="icon.svg">
+<link rel="apple-touch-icon" href="icon.svg">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-title" content="Zupona">
 </head>
 <body data-page="account">
 
-<header id="site-header"></header>
+<header id="hd"></header>
 
-<div class="page-head">
-  <div class="container">
-    <nav class="crumbs"><a href="index.html">Home</a> <span>/</span> <span>My account</span></nav>
-    <h1>My Account</h1>
+<main class="wrap">
+  <div class="ph">
+    <nav class="crumb"><a href="index.html">Home</a><span>/</span><span>My account</span></nav>
+    <h1>My account</h1>
   </div>
-</div>
 
-<main class="container">
-  <div class="acc-layout">
-
-    <aside class="acc-nav">
-      <div class="acc-user">
-        <span class="acc-avatar">R</span>
-        <span><strong>Rakib Hasan</strong><br><small class="text-muted">rakib@example.com</small></span>
+  <div class="acc">
+    <aside class="acc-n">
+      <div class="acc-u">
+        <span class="acc-av">R</span>
+        <span><b style="font-size:14px">Rakib Hasan</b><br><small style="color:var(--ink-3);font-size:11.5px">rakib@example.com</small></span>
       </div>
-      <button data-acctab="dashboard" class="is-active">📊 Dashboard</button>
-      <button data-acctab="orders">📦 My orders</button>
-      <button data-acctab="wishlist">❤ Wishlist</button>
-      <button data-acctab="address">📍 Addresses</button>
-      <button data-acctab="profile">👤 Profile settings</button>
-      <button data-acctab="signin">🔐 Sign in / Register</button>
+      <button data-at="dash" class="on">Dashboard</button>
+      <button data-at="orders">My orders</button>
+      <button data-at="wish">Saved items</button>
+      <button data-at="addr">Addresses</button>
+      <button data-at="prof">Profile settings</button>
+      <button data-at="in">Sign in / Register</button>
     </aside>
 
     <section>
-      <!-- DASHBOARD -->
-      <div data-acc="dashboard">
+      <div data-acc="dash">
         <div class="stats" id="accStats"></div>
-        <div class="panel mt-16">
-          <h3>Welcome back 👋</h3>
-          <p class="text-muted" style="font-size:14px;margin:0">Track orders, manage your wishlist and update delivery
-          addresses from here. Everything is stored on this device, so your cart and wishlist stay put when you come back.</p>
+        <div class="pnl" style="margin-top:16px">
+          <h3>Welcome back</h3>
+          <p style="font-size:13.5px;color:var(--ink-3)">Track orders, manage saved items and update your delivery addresses here. Everything stays on this device, so your cart and saved list are waiting when you return.</p>
         </div>
-        <div class="panel">
-          <h3>Membership perks</h3>
-          <div class="addr-grid">
-            <div class="addr"><span class="pill">Free delivery</span><br>On every order above Tk 999, nationwide.</div>
-            <div class="addr"><span class="pill">Reward points</span><br>Earn 120 points per completed order.</div>
-            <div class="addr"><span class="pill">Early access</span><br>Shop flash deals 2 hours before everyone else.</div>
-            <div class="addr"><span class="pill">Priority support</span><br>Dedicated line for members, 24/7.</div>
+        <div class="pnl">
+          <h3>Member benefits</h3>
+          <div class="addr">
+            <div><span class="pill">Free delivery</span><br>On every order above Tk 999, nationwide.</div>
+            <div><span class="pill">Reward points</span><br>Earn 120 points per completed order.</div>
+            <div><span class="pill">Early access</span><br>Shop deals two hours before everyone else.</div>
+            <div><span class="pill">Priority support</span><br>A dedicated line for members.</div>
           </div>
         </div>
       </div>
 
-      <!-- ORDERS -->
       <div data-acc="orders" class="hide">
-        <div class="panel">
-          <h3>Order history</h3>
-          <p class="text-muted" style="font-size:13px">Orders you place in this browser appear here instantly.</p>
-        </div>
-        <div id="accOrders" class="mt-16"></div>
+        <div class="pnl" style="margin-bottom:16px"><h3>Order history</h3>
+          <p style="font-size:12.5px;color:var(--ink-3)">Orders you place appear here instantly, with live tracking.</p></div>
+        <div id="accOrders"></div>
       </div>
 
-      <!-- WISHLIST -->
-      <div data-acc="wishlist" class="hide">
-        <div class="panel" style="margin-bottom:14px">
-          <h3>My wishlist</h3>
-          <p class="text-muted" style="font-size:13px;margin:0">Saved products stay here until you move them to the cart.</p>
-        </div>
+      <div data-acc="wish" class="hide">
+        <div class="pnl" style="margin-bottom:16px"><h3>Saved items</h3>
+          <p style="font-size:12.5px;color:var(--ink-3)">Products stay here until you move them to the cart.</p></div>
         <div id="accWish"></div>
       </div>
 
-      <!-- ADDRESSES -->
-      <div data-acc="address" class="hide">
-        <div class="panel">
-          <div class="flex-between" style="margin-bottom:12px">
+      <div data-acc="addr" class="hide">
+        <div class="pnl">
+          <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:14px">
             <h3 style="margin:0">Saved addresses</h3>
-            <button class="btn btn-ghost btn-sm" onclick="ZUPONA.toast('Address form opened')">+ Add new</button>
+            <button class="btn btn-line btn-sm" onclick="ZUPONA.toast('Address form opened')">+ Add new</button>
           </div>
-          <div class="addr-grid">
-            <div class="addr">
-              <span class="pill">Default</span><br>
-              <strong>Home</strong><br>Rakib Hasan · 01712 345678<br>
-              House 12, Road 7, Banani, Dhaka 1213
-            </div>
-            <div class="addr">
-              <strong>Office</strong><br>Rakib Hasan · 01712 345678<br>
-              Level 6, Gulshan Tower, Gulshan 1, Dhaka 1212
-            </div>
+          <div class="addr">
+            <div><span class="pill">Default</span><br><b>Home</b><br>Rakib Hasan · 01712 345678<br>House 12, Road 7, Banani, Dhaka 1213</div>
+            <div><b>Office</b><br>Rakib Hasan · 01712 345678<br>Level 6, Gulshan Tower, Gulshan 1, Dhaka 1212</div>
           </div>
         </div>
       </div>
 
-      <!-- PROFILE -->
-      <div data-acc="profile" class="hide">
-        <div class="panel">
+      <div data-acc="prof" class="hide">
+        <div class="pnl">
           <h3>Profile settings</h3>
-          <form class="acc-form form-grid">
-            <div class="field"><label>Full name</label><input value="Rakib Hasan"></div>
-            <div class="field"><label>Mobile number</label><input value="01712345678"></div>
-            <div class="field"><label>Email</label><input type="email" value="rakib@example.com"></div>
-            <div class="field"><label>Date of birth</label><input type="date" value="1996-04-12"></div>
-            <div class="field full"><label>Change password</label><input type="password" placeholder="New password"></div>
-            <div class="field full"><button class="btn btn-primary" type="submit">Save changes</button></div>
+          <form class="accF fg">
+            <div class="fd"><label>Full name</label><input value="Rakib Hasan"></div>
+            <div class="fd"><label>Mobile number</label><input value="01712345678"></div>
+            <div class="fd"><label>Email</label><input type="email" value="rakib@example.com"></div>
+            <div class="fd"><label>Date of birth</label><input type="date" value="1996-04-12"></div>
+            <div class="fd w"><label>New password</label><input type="password" placeholder="••••••••"></div>
+            <div class="fd w"><button class="btn btn-ink" type="submit">Save changes</button></div>
           </form>
         </div>
       </div>
 
-      <!-- SIGN IN -->
-      <div data-acc="signin" class="hide">
-        <div class="cart-layout">
-          <div class="panel">
+      <div data-acc="in" class="hide">
+        <div class="two-r" style="margin-top:0">
+          <div class="pnl">
             <h3>Sign in</h3>
-            <form class="acc-form form-grid">
-              <div class="field full"><label>Email or mobile</label><input required placeholder="you@example.com"></div>
-              <div class="field full"><label>Password</label><input type="password" required placeholder="••••••••"></div>
-              <div class="field full flex-between">
-                <label class="check"><input type="checkbox" checked> <span>Keep me signed in</span></label>
-                <a href="#" style="font-size:13px;color:var(--blue);font-weight:700">Forgot password?</a>
+            <form class="accF fg">
+              <div class="fd w"><label>Email or mobile</label><input required placeholder="you@example.com"></div>
+              <div class="fd w"><label>Password</label><input type="password" required placeholder="••••••••"></div>
+              <div class="fd w" style="flex-direction:row;justify-content:space-between;align-items:center">
+                <label class="ck"><input type="checkbox" checked><span>Keep me signed in</span></label>
+                <a href="#" style="font-size:12.5px;color:var(--gold);font-weight:600">Forgot password?</a>
               </div>
-              <div class="field full"><button class="btn btn-primary btn-block" type="submit">Sign in</button></div>
+              <div class="fd w"><button class="btn btn-ink btn-full" type="submit">Sign in</button></div>
             </form>
           </div>
-          <div class="panel">
+          <div class="pnl">
             <h3>New to Zupona?</h3>
-            <form class="acc-form form-grid">
-              <div class="field full"><label>Full name</label><input required placeholder="Your name"></div>
-              <div class="field full"><label>Mobile number</label><input required type="tel" placeholder="01XXXXXXXXX"></div>
-              <div class="field full"><label>Password</label><input type="password" required placeholder="Create a password"></div>
-              <div class="field full"><button class="btn btn-gold btn-block" type="submit">Create account</button></div>
+            <form class="accF fg">
+              <div class="fd w"><label>Full name</label><input required placeholder="Your name"></div>
+              <div class="fd w"><label>Mobile number</label><input type="tel" required placeholder="01XXXXXXXXX"></div>
+              <div class="fd w"><label>Password</label><input type="password" required placeholder="Create a password"></div>
+              <div class="fd w"><button class="btn btn-gold btn-full" type="submit">Create account</button></div>
             </form>
-            <p class="text-muted" style="font-size:12px;margin-top:10px">By registering you agree to our terms of service and privacy policy.</p>
+            <p style="font-size:11.5px;color:var(--ink-3);margin-top:12px">By registering you agree to our terms of service and privacy policy.</p>
           </div>
         </div>
       </div>
@@ -140,8 +125,8 @@
   </div>
 </main>
 
-<div id="site-footer"></div>
-<div id="site-extras"></div>
-<script src="js/app.js"></script>
+<div id="ft"></div>
+<div id="xt"></div>
+<script src="js/zupona.js"></script>
 </body>
 </html>

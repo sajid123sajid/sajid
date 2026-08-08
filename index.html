@@ -2,166 +2,173 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<meta name="theme-color" content="#D4A017">
-<meta name="description" content="ZUPONA — Trusted Online Shop. Premium beauty, fashion, accessories, baby care and toys with fast nationwide delivery.">
-<title>ZUPONA — Trusted Online Shop</title>
-<link rel="stylesheet" href="css/style.css">
-<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='8' fill='%23D4A017'/><text x='16' y='23' font-size='20' font-family='Arial' font-weight='bold' fill='white' text-anchor='middle'>Z</text></svg>">
+<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#FAF8F4" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#0B0C0F" media="(prefers-color-scheme: dark)">
+<meta name="description" content="Zupona — trusted online shop. Authentic beauty, fashion, accessories, baby care and toys with fast nationwide delivery and 30-day returns.">
+<title>Zupona — Trusted Online Shop</title>
+<link rel="stylesheet" href="css/zupona.css">
+<link rel="manifest" href="manifest.json">
+<link rel="icon" href="icon.svg">
+<link rel="apple-touch-icon" href="icon.svg">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-title" content="Zupona">
 </head>
 <body data-page="home">
 
-<header id="site-header"></header>
+<header id="hd"></header>
 
-<main class="container">
+<main class="wrap">
 
-  <!-- HERO -->
-  <section class="hero">
-    <div class="hero-slider">
-      <div class="slides" id="heroSlides"></div>
-      <button class="slider-arrow prev" id="heroPrev" aria-label="Previous slide">
-        <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 5l-7 7 7 7"/></svg>
-      </button>
-      <button class="slider-arrow next" id="heroNext" aria-label="Next slide">
-        <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 5l7 7-7 7"/></svg>
-      </button>
-      <div class="slider-dots" id="heroDots"></div>
+  <!-- 1 · HERO — one image, one promise, one action -->
+  <section class="sec hero" style="margin-top:12px">
+    <div class="hero-f">
+      <div class="hero-t" id="heroT"></div>
+      <button class="hero-a p" id="heroP" aria-label="Previous"><svg viewBox="0 0 24 24" width="19" height="19" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 5l-7 7 7 7"/></svg></button>
+      <button class="hero-a n" id="heroN" aria-label="Next"><svg viewBox="0 0 24 24" width="19" height="19" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 5l7 7-7 7"/></svg></button>
+      <div class="hero-d" id="heroD"></div>
+    </div>
+    <div class="trust">
+      <div><b>100%</b><span>Authentic brands</span></div>
+      <div><b>24–48h</b><span>Dhaka delivery</span></div>
+      <div><b>30-day</b><span>Free returns</span></div>
     </div>
   </section>
 
-  <!-- CATEGORIES -->
-  <section class="section">
-    <div class="section-head">
-      <div>
-        <h2>Shop by Category</h2>
-        <p class="sub">Eight curated departments, thousands of authentic products</p>
-      </div>
-      <a class="view-all" href="shop.html">View All
-        <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h13M13 6l6 6-6 6"/></svg>
-      </a>
+  <!-- 2 · WHAT YOU CAN BUY -->
+  <section class="sec">
+    <div class="sec-hd">
+      <div><span class="eyebrow">Departments</span><h2>Shop by category</h2><p>Eight curated departments, thousands of authentic products</p></div>
+      <a class="more" href="shop.html">View all <svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h13M13 6l6 6-6 6"/></svg></a>
     </div>
-    <div class="cat-grid" id="catGrid"></div>
+    <div class="cats" id="cats"></div>
+  </section>
 
-    <div class="features">
-      <div class="feature">
-        <span class="f-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"><path d="M2.5 6.5h11v10h-11z"/><path d="M13.5 10h4l3 3v3.5h-7z"/><circle cx="6.5" cy="18" r="1.6"/><circle cx="17" cy="18" r="1.6"/></svg></span>
-        <span><strong>Free Delivery</strong><small>On orders over Tk 999</small></span>
-      </div>
-      <div class="feature">
-        <span class="f-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M20 12a8 8 0 1 1-2.4-5.7"/><path d="M20 4v4h-4"/></svg></span>
-        <span><strong>30-Day Returns</strong><small>Hassle-free returns</small></span>
-      </div>
-      <div class="feature">
-        <span class="f-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"><path d="M12 3l7 3v6c0 4.4-3 7.7-7 9-4-1.3-7-4.6-7-9V6z"/><path d="M9 12l2 2 4-4"/></svg></span>
-        <span><strong>Secure Payment</strong><small>100% secure checkout</small></span>
-      </div>
-      <div class="feature">
-        <span class="f-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4.5 14v-2a7.5 7.5 0 0 1 15 0v2"/><rect x="3" y="13.5" width="3.6" height="6" rx="1.6"/><rect x="17.4" y="13.5" width="3.6" height="6" rx="1.6"/></svg></span>
-        <span><strong>24/7 Support</strong><small>We're here to help</small></span>
-      </div>
+  <!-- 3 · A REASON TO STAY -->
+  <section class="sec">
+    <div class="deals">
+    <div class="sec-hd">
+      <div><span class="eyebrow">Ends at midnight</span><h2>Today's deals</h2></div>
+      <a class="more" href="shop.html?sort=off">All deals <svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h13M13 6l6 6-6 6"/></svg></a>
+    </div>
+      <div style="margin:-8px 0 20px"><span class="cd-l">Time remaining</span><div class="cd" id="cd"></div></div>
+      <div class="dcards" id="deals"></div>
     </div>
   </section>
 
-  <!-- BEST SELLING -->
-  <section class="section">
-    <div class="section-head">
-      <div>
-        <h2>Best Selling Products</h2>
-        <p class="sub">What everyone is buying this week</p>
-      </div>
-      <a class="view-all" href="shop.html?sort=popular">View All
-        <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h13M13 6l6 6-6 6"/></svg>
-      </a>
+  <!-- 4 · SOCIAL PROOF -->
+  <section class="sec">
+    <div class="sec-hd">
+      <div><h2>Best sellers this week</h2><p>What Zupona shoppers are buying most</p></div>
+      <a class="more" href="shop.html?sort=pop">View all <svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h13M13 6l6 6-6 6"/></svg></a>
     </div>
-    <div class="prod-rail" id="bestSelling"></div>
+    <div class="rail" id="best"></div>
   </section>
 
-  <!-- FLASH DEALS -->
-  <section class="section">
-    <div class="deal-wrap">
-      <div class="deal-top">
-        <div>
-          <h2>🔥 Flash Deals</h2>
-          <p class="sub">Limited stock — offer ends at midnight</p>
-        </div>
-        <div class="countdown" id="countdown"></div>
-      </div>
-      <div class="prod-rail" id="flashDeals"></div>
-    </div>
+  <!-- 5 · EDITORIAL -->
+  <section class="sec">
+    <div class="split" id="split"></div>
   </section>
 
-  <!-- TOP PICKS -->
-  <section class="section">
-    <div class="section-head">
-      <div>
-        <h2>Top Picks For You</h2>
-        <p class="sub">Highest rated by Zupona shoppers</p>
-      </div>
-      <a class="view-all" href="shop.html?sort=rating">View All
-        <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h13M13 6l6 6-6 6"/></svg>
-      </a>
+  <!-- 6 · SAVINGS -->
+  <section class="sec">
+    <div class="sec-hd">
+      <div><span class="eyebrow">Vouchers</span><h2>Collect & save</h2><p>Tap to save a code — it applies at checkout</p></div>
+      
     </div>
-    <div class="prod-grid" id="topPicks"></div>
+    <div class="vouch" id="vouch"></div>
   </section>
 
-  <!-- PROMO BANNERS -->
-  <section class="section">
-    <div class="banner-grid">
-      <a class="banner b-gold" href="shop.html?cat=health-beauty">
-        <div><small>Beauty Week</small><h3>Up to 40% off skincare</h3><span class="btn btn-sm">Shop beauty</span></div>
-      </a>
-      <a class="banner b-sand" href="shop.html?cat=womens-fashion">
-        <div><small>New Season</small><h3>Modest wear edit</h3><span class="btn btn-sm">Discover</span></div>
-      </a>
-      <a class="banner b-ink" href="shop.html?cat=mens-acc">
-        <div><small>Accessories</small><h3>Watches &amp; wallets</h3><span class="btn btn-sm">Browse now</span></div>
-      </a>
+  <!-- 7 · TOP RATED -->
+  <section class="sec">
+    <div class="sec-hd">
+      <div><h2>Top rated</h2><p>Nothing under 4.3 stars from verified buyers</p></div>
+      <a class="more" href="shop.html?sort=rate">View all <svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h13M13 6l6 6-6 6"/></svg></a>
     </div>
+    <div class="grid" id="picks"></div>
   </section>
 
-  <!-- NEW ARRIVALS -->
-  <section class="section">
-    <div class="section-head">
-      <div>
-        <h2>New Arrivals</h2>
-        <p class="sub">Fresh in this week</p>
-      </div>
-      <a class="view-all" href="shop.html?sort=new">View All
-        <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h13M13 6l6 6-6 6"/></svg>
-      </a>
+  <!-- 8 · COLLECTIONS -->
+  <section class="sec">
+    <div class="sec-hd">
+      <div><span class="eyebrow">Curated</span><h2>Shop the edits</h2><p>Complete looks styled by our team</p></div>
+      
     </div>
-    <div class="prod-grid" id="newArrivals"></div>
+    <div class="looks" id="looks"></div>
   </section>
 
-  <!-- BRANDS -->
-  <section class="section">
-    <div class="section-head"><div><h2>Official Brand Partners</h2><p class="sub">100% authentic, sourced directly</p></div></div>
-    <div class="brand-strip">
-      <a class="brand-chip" href="shop.html?q=Lux">LUX</a>
-      <a class="brand-chip" href="shop.html?q=Dove">Dove</a>
-      <a class="brand-chip" href="shop.html?q=Nivea">NIVEA</a>
-      <a class="brand-chip" href="shop.html?q=CeraVe">CeraVe</a>
-      <a class="brand-chip" href="shop.html?q=Garnier">Garnier</a>
-      <a class="brand-chip" href="shop.html?q=Naviforce">NAVIFORCE</a>
+  <!-- 9 · NEW IN -->
+  <section class="sec">
+    <div class="sec-hd">
+      <div><h2>New arrivals</h2><p>Fresh in this week</p></div>
+      <a class="more" href="shop.html?sort=new">View all <svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h13M13 6l6 6-6 6"/></svg></a>
     </div>
+    <div class="rail" id="fresh"></div>
   </section>
 
-  <!-- NEWSLETTER -->
-  <section class="section">
-    <div class="newsletter">
+  <!-- 10 · RECENTLY VIEWED -->
+  <section class="sec hide">
+    <div class="sec-hd">
+      <div><h2>Recently viewed</h2></div>
+      
+    </div>
+    <div class="rail" id="viewed"></div>
+  </section>
+
+  <!-- 11 · WHY ZUPONA -->
+  <section class="sec">
+    <div class="sec-hd">
+      <div><span class="eyebrow">Why Zupona</span><h2>Shopping you can trust</h2></div>
+      
+    </div>
+    <div class="why" id="why"></div>
+  </section>
+
+  <!-- 12 · TESTIMONIALS -->
+  <section class="sec">
+    <div class="sec-hd">
+      <div><h2>What our customers say</h2><p>Over 120,000 orders delivered nationwide</p></div>
+      
+    </div>
+    <div class="says" id="says"></div>
+  </section>
+
+  <!-- 13 · BRANDS -->
+  <section class="sec">
+    <div class="sec-hd">
+      <div><h2>Official brand partners</h2><p>Sourced directly, always sealed</p></div>
+      
+    </div>
+    <div class="brands" id="brands"></div>
+  </section>
+
+  <!-- 14 · JOURNAL -->
+  <section class="sec">
+    <div class="sec-hd">
+      <div><span class="eyebrow">Journal</span><h2>Guides & edits</h2></div>
+      <a class="more" href="#">Read all <svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h13M13 6l6 6-6 6"/></svg></a>
+    </div>
+    <div class="posts" id="posts"></div>
+  </section>
+
+  <!-- 15 · CLOSE -->
+  <section class="sec">
+    <div class="band">
+      <span class="eyebrow" style="color:var(--gold-2)">Join Zupona</span>
       <h2>Get Tk 100 off your first order</h2>
-      <p>Join the Zupona list for early access to flash deals, new arrivals and members-only vouchers.</p>
-      <form class="news-form" onsubmit="event.preventDefault(); this.reset(); ZUPONA.toast('Subscribed — check your inbox for the voucher');">
-        <input type="email" required placeholder="Enter your email address">
+      <p>Early access to deals, new arrivals and members-only vouchers. One email a week, never more.</p>
+      <form onsubmit="event.preventDefault();this.reset();ZUPONA.toast('Subscribed — check your inbox');">
+        <input type="email" required placeholder="Your email address">
         <button class="btn btn-gold" type="submit">Subscribe</button>
       </form>
+      <p class="band-note">No spam. Unsubscribe in one tap.</p>
     </div>
   </section>
 
 </main>
 
-<div id="site-footer"></div>
-<div id="site-extras"></div>
-<script src="js/app.js"></script>
+<div id="ft"></div>
+<div id="xt"></div>
+<script src="js/zupona.js"></script>
 </body>
 </html>

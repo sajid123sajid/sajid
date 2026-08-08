@@ -2,125 +2,111 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<meta name="theme-color" content="#D4A017">
-<title>Product — ZUPONA</title>
-<link rel="stylesheet" href="css/style.css">
-<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='8' fill='%23D4A017'/><text x='16' y='23' font-size='20' font-family='Arial' font-weight='bold' fill='white' text-anchor='middle'>Z</text></svg>">
+<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#FAF8F4" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#0B0C0F" media="(prefers-color-scheme: dark)">
+<meta name="description" content="Zupona — trusted online shop. Authentic beauty, fashion, accessories, baby care and toys with fast nationwide delivery and 30-day returns.">
+<title>Product — Zupona</title>
+<link rel="stylesheet" href="css/zupona.css">
+<link rel="manifest" href="manifest.json">
+<link rel="icon" href="icon.svg">
+<link rel="apple-touch-icon" href="icon.svg">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-title" content="Zupona">
 </head>
 <body data-page="product">
 
-<header id="site-header"></header>
+<header id="hd"></header>
 
-<div class="page-head">
-  <div class="container">
-    <nav class="crumbs">
-      <a href="index.html">Home</a> <span>/</span>
-      <a id="pdCatCrumb" href="shop.html">Category</a> <span>/</span>
-      <span id="pdCrumb"></span>
-    </nav>
+<main class="wrap">
+  <div class="ph" style="padding-bottom:0">
+    <nav class="crumb"><a href="index.html">Home</a><span>/</span><a id="pdCat" href="shop.html">Category</a><span>/</span><span id="pdCrumb"></span></nav>
   </div>
-</div>
 
-<main class="container">
-  <div class="pd-wrap">
-
-    <!-- GALLERY -->
-    <div class="pd-gallery">
-      <img class="pd-main" id="pdMain" src="" alt="">
-      <div class="pd-thumbs" id="pdThumbs"></div>
+  <div class="pd">
+    <div class="gal">
+      <img class="gal-m" id="pdMain" src="" alt="">
+      <div class="gal-t" id="pdThumbs"></div>
     </div>
 
-    <!-- INFO -->
-    <div class="pd-info">
-      <span class="pd-brand" id="pdBrand"></span>
+    <div>
+      <span class="pd-br" id="pdBrand"></span>
       <h1 id="pdName"></h1>
-      <div class="pd-meta" id="pdStars"></div>
-
-      <div class="pd-price-box">
-        <div id="pdPrice"></div>
-        <div class="text-muted" style="font-size:13px;margin-top:6px" id="pdStock"></div>
-      </div>
-
-      <div id="pdOptions"></div>
-
-      <div class="buy-row">
-        <span class="qty" id="pdQtyBox">
-          <button data-q="-1" aria-label="Decrease quantity">−</button>
-          <span id="pdQty">1</span>
-          <button data-q="1" aria-label="Increase quantity">+</button>
+      <div class="pd-meta" id="pdMeta"></div>
+      <div class="pd-price" id="pdPrice"></div>
+      <div id="pdOpts"></div>
+      <div class="buy">
+        <span class="qty" id="pdQ">
+          <button data-q="-1" aria-label="Less">−</button><span id="pdQn">1</span><button data-q="1" aria-label="More">+</button>
         </span>
-        <button class="btn btn-primary" id="pdAdd">Add to Cart</button>
-        <button class="btn btn-gold" id="pdBuy">Buy Now</button>
-        <button class="pd-wish" id="pdWish" aria-label="Add to wishlist">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linejoin="round"><path d="M12 20s-7.5-4.6-7.5-9.6A4.4 4.4 0 0 1 12 7.6a4.4 4.4 0 0 1 7.5 2.8C19.5 15.4 12 20 12 20z"/></svg>
+        <button class="btn btn-ink" id="pdAdd">Add to cart</button>
+        <button class="btn btn-gold" id="pdBuy">Buy now</button>
+        <button class="pd-w" data-pw aria-label="Save">
+          <svg viewBox="0 0 24 24" width="21" height="21" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linejoin="round"><path d="M12 20s-7.5-4.6-7.5-9.6A4.4 4.4 0 0 1 12 7.6a4.4 4.4 0 0 1 7.5 2.8C19.5 15.4 12 20 12 20z"/></svg>
         </button>
       </div>
-
-      <div class="pd-usp">
-        <div class="usp"><span class="f-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"><path d="M2.5 6.5h11v10h-11z"/><path d="M13.5 10h4l3 3v3.5h-7z"/><circle cx="6.5" cy="18" r="1.6"/><circle cx="17" cy="18" r="1.6"/></svg></span> Free delivery over Tk 999</div>
-        <div class="usp"><span class="f-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M20 12a8 8 0 1 1-2.4-5.7"/><path d="M20 4v4h-4"/></svg></span> 30-day easy return</div>
-        <div class="usp"><span class="f-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"><path d="M12 3l7 3v6c0 4.4-3 7.7-7 9-4-1.3-7-4.6-7-9V6z"/><path d="M9 12l2 2 4-4"/></svg></span> 100% authentic guarantee</div>
-        <div class="usp"><span class="f-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4.5 14v-2a7.5 7.5 0 0 1 15 0v2"/><rect x="3" y="13.5" width="3.6" height="6" rx="1.6"/><rect x="17.4" y="13.5" width="3.6" height="6" rx="1.6"/></svg></span> Cash on delivery available</div>
-      </div>
+      <div class="info" id="pdInfo"></div>
     </div>
   </div>
 
-  <!-- TABS -->
-  <section class="section">
-    <div class="panel">
+  <section class="sec">
+    <div class="pnl">
       <div class="tabs">
-        <button data-tab="desc" class="is-active">Description</button>
-        <button data-tab="specs">Specifications</button>
-        <button data-tab="reviews">Reviews</button>
-        <button data-tab="ship">Delivery &amp; Returns</button>
+        <button data-tab="d" class="on">Description</button>
+        <button data-tab="s">Specifications</button>
+        <button data-tab="r">Reviews</button>
+        <button data-tab="v">Delivery &amp; returns</button>
       </div>
-
-      <div class="tab-panel" data-panel="desc">
+      <div class="tp" data-tp="d">
         <p id="pdDesc"></p>
-        <p>Every item sold on ZUPONA is sourced from authorised distributors and quality-checked before dispatch.
-        If the product does not match the description, return it within 30 days for a full refund — no questions asked.</p>
-        <ul style="padding-left:18px;list-style:disc">
-          <li>Authentic, sealed packaging</li>
-          <li>Quality checked before dispatch</li>
-          <li>Nationwide delivery with live tracking</li>
-          <li>Dedicated 24/7 customer support</li>
-        </ul>
+        <p style="margin-top:12px">Every item sold on Zupona is sourced from authorised distributors and quality-checked before dispatch. If it doesn't match the description, return it within 30 days for a full refund.</p>
       </div>
-
-      <div class="tab-panel hide" data-panel="specs">
-        <table class="spec-table"><tbody id="pdSpecs"></tbody></table>
-      </div>
-
-      <div class="tab-panel hide" data-panel="reviews" id="reviews">
-        <div class="rv-summary">
-          <div id="pdRatingBig" style="text-align:center"></div>
-          <div>
-            <p style="margin:0">Reviews are collected from verified buyers only. Rate this product after your order is delivered.</p>
-            <button class="btn btn-ghost btn-sm mt-16" onclick="ZUPONA.toast('Sign in to write a review')">Write a review</button>
-          </div>
+      <div class="tp hide" data-tp="s"><table class="spec"><tbody id="pdSpec"></tbody></table></div>
+      <div class="tp hide" data-tp="r" id="rev">
+        <div style="display:grid;gap:20px;grid-template-columns:1fr;align-items:center;background:var(--ivory-2);border-radius:20px;padding:20px;margin-bottom:12px">
+          <div id="pdBig" style="text-align:center"></div>
+          <div><p style="font-size:13.5px;color:var(--ink-2)">Reviews come from verified buyers only. You can rate a product once your order is delivered.</p></div>
         </div>
-        <div id="pdReviews"></div>
+        <div id="pdRevs"></div>
       </div>
-
-      <div class="tab-panel hide" data-panel="ship">
-        <p><strong>Inside Dhaka:</strong> 24–48 hours · Tk 60 (free over Tk 999)</p>
-        <p><strong>Outside Dhaka:</strong> 2–4 business days · Tk 120 (free over Tk 999)</p>
-        <p><strong>Returns:</strong> Request a return within 30 days of delivery from your account page. Products must be
-        unused and in original packaging. Refunds are issued to the original payment method within 5–7 business days.</p>
+      <div class="tp hide" data-tp="v">
+        <p><strong>Inside Dhaka</strong> — 24–48 hours, Tk 60 (free over Tk 999)</p>
+        <p><strong>Outside Dhaka</strong> — 2–4 business days, Tk 120 (free over Tk 999)</p>
+        <p style="margin-top:10px"><strong>Returns</strong> — request a return within 30 days from your account page. Items must be unused and in original packaging. Refunds reach your original payment method within 5–7 business days.</p>
       </div>
     </div>
   </section>
 
-  <!-- RELATED -->
-  <section class="section">
-    <div class="section-head"><div><h2>You may also like</h2><p class="sub">Handpicked from the same department</p></div></div>
-    <div class="prod-rail" id="related"></div>
+  <section class="sec">
+    <div class="sec-hd">
+      <div><h2>You may also like</h2><p>Handpicked from the same department</p></div>
+      
+    </div>
+    <div class="rail" id="related"></div>
+  </section>
+
+  <section class="sec hide">
+    <div class="sec-hd">
+      <div><h2>Recently viewed</h2></div>
+      
+    </div>
+    <div class="rail" id="viewed"></div>
   </section>
 </main>
 
-<div id="site-footer"></div>
-<div id="site-extras"></div>
-<script src="js/app.js"></script>
+<div class="pdbar">
+  <button class="ab" data-pw aria-label="Save">
+    <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linejoin="round"><path d="M12 20s-7.5-4.6-7.5-9.6A4.4 4.4 0 0 1 12 7.6a4.4 4.4 0 0 1 7.5 2.8C19.5 15.4 12 20 12 20z"/></svg>
+  </button>
+  <button class="ab" id="pdShare" aria-label="Share">
+    <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linejoin="round"><path d="M12 3v11"/><path d="M8 7l4-4 4 4"/><path d="M5 14v6h14v-6"/></svg>
+  </button>
+  <button class="btn btn-ink" onclick="document.getElementById('pdAdd').click()">Add to cart</button>
+  <button class="btn btn-gold" onclick="document.getElementById('pdBuy').click()">Buy now</button>
+</div>
+
+<div id="ft"></div>
+<div id="xt"></div>
+<script src="js/zupona.js"></script>
 </body>
 </html>

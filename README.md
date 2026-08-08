@@ -1,32 +1,59 @@
 # ZUPONA — Trusted Online Shop
 
-A complete, responsive e-commerce front-end (mobile + desktop) inspired by Amazon / Daraz / Alibaba.
-Pure HTML + CSS + vanilla JavaScript. No build step, no dependencies, works offline.
+A complete, responsive marketplace front-end. **Two source files** (`css/zupona.css`, `js/zupona.js`)
+plus six pages. Pure HTML + CSS + vanilla JavaScript — no build step, no dependencies, installable as an app.
 
 ## Run it
-Open `index.html` in any browser. To host: upload the whole `zupona` folder to Netlify, Vercel, GitHub Pages or any shared hosting `public_html`.
+Open `index.html`. For the install prompt and offline mode, serve over http(s) — Netlify, Vercel,
+GitHub Pages, or any `public_html` folder.
+
+## Design identity
+| Choice | Why it's Zupona and not a clone |
+|---|---|
+| Warm ivory canvas `#FAF8F4` | Marketplaces default to cold grey or red-on-white. Ivory reads premium and calm. |
+| One gold accent `#B8912F` | Used once per screen — CTA, price, or active state. Never two at once. |
+| Serif headlines | Amazon, Daraz and Alibaba are all sans. A serif display face is instantly distinctive. |
+| Full-bleed hero + scrim | One image, one promise, one action. Nothing competes above the fold. |
+
+## The first five seconds (mobile)
+1. **Who is this?** — 56px header: menu, wordmark, cart. One soft search pill below.
+2. **What's the promise?** — full-bleed hero, kicker, serif headline, single gold CTA.
+3. **Why keep scrolling?** — trust ribbon: 100% authentic · 24–48h delivery · 30-day returns.
+
+Then: categories → today's deals → best sellers → editorial → vouchers → the rest.
 
 ## Pages
-| File | What it does |
+| File | Contents |
 |---|---|
-| index.html | Home: hero slider, categories, best sellers, flash deals + countdown, top picks, banners, new arrivals, brands, newsletter |
-| shop.html | Listing: category/brand/price/rating filters, sort, grid & list view, pagination, search results |
-| product.html | Product: gallery + thumbnails, variants, quantity, add to cart / buy now, tabs (description, specs, reviews, delivery), related items |
-| cart.html | Cart: qty update, remove, coupons, free-delivery progress bar, order summary |
-| checkout.html | 4-step checkout: shipping form → payment method → review → order confirmation |
-| account.html | Dashboard, order history, wishlist, addresses, profile, sign in / register |
+| index.html | Hero, trust ribbon, categories, deals + countdown, best sellers, editorial split, vouchers, top rated, edits, new arrivals, recently viewed, why Zupona, testimonials, brands, journal, newsletter |
+| shop.html | Filters (category, brand, price, rating), sort sheet, grid/list, chips, pagination |
+| product.html | 4-image gallery, variants, sticky mobile action bar, delivery dates, tabs, reviews, related |
+| cart.html | Quantity, save for later, coupons, free-delivery progress, delivery estimate, totals |
+| checkout.html | 4 steps: shipping → payment → review → confirmation |
+| account.html | Dashboard, orders with tracking + one-tap reorder, saved items, addresses, profile |
 
-## Features
-- Fully responsive: 360px phone → 4K desktop. Mobile bottom nav, slide-in menu, slide-in cart drawer, filter drawer.
-- Cart, wishlist and orders persist in localStorage (survive refresh).
-- Working coupons: `ZUPONA10` (10%), `EID25` (25%), `WELCOME5` (5%).
-- Free delivery over Tk 999, otherwise Tk 60 — configurable.
-- Product artwork is generated as inline SVG, so nothing breaks without internet. Replace `pImg()` in js/app.js with your real image URLs.
+## Convenience features
+- **Undo** on every removal — remove an item or clear the cart and the toast offers a one-tap undo.
+- **Save for later** in the cart — moves an item to your saved list instead of deleting it.
+- **Order again** — one tap on any past order refills the cart.
+- **Free-delivery progress** in the cart drawer: "Add Tk 240 more for free delivery".
+- **Delivery estimate** with real dates on both the product page and the cart.
+- **Floating help button** — call, WhatsApp, email, track order, plus delivery and return terms.
+- Dark mode (follows your system, toggle in the menu drawer).
+- Full-screen search with live suggestions, trending terms, recent history and voice input.
+- Long-press any product for quick view. Swipe-down to dismiss sheets. Pull to refresh.
+- PWA install + offline caching. Haptic feedback. Reduced-motion respected.
+
+**Coupons:** `ZUPONA10` 10% · `EID25` 25% · `WELCOME5` 5% · `FREESHIP` free delivery.
+Free delivery over Tk 999, otherwise Tk 60.
 
 ## Customise
-Everything lives in two files:
-- `css/style.css` → top `:root` block holds colours, radius, shadows, container width.
-- `js/app.js` → `CONFIG` (currency, shipping, coupons), `CATEGORIES`, `PRODUCTS` (add your catalogue here).
+`css/zupona.css` → the `:root` block: colours, type scale, spacing scale, radii, shadows.
 
-## Connecting a backend
-Replace the `PRODUCTS` array with a `fetch('/api/products')` call and post the cart from `Store.totals()` in `initCheckout()` to your order endpoint. Everything else stays the same.
+`js/zupona.js` → `CFG` (currency, shipping, coupons) · `CATS` (departments) · `RAW` (catalogue)
+· `SLIDES` (hero) · `VOUCH` · `LOOKS` · `POSTS` · `SAYS` · `PHOTO`.
+
+Adding a product is one row in `RAW`:
+```js
+["p29","Product name","Brand","cat",price,oldPrice,rating,reviews,sold,stock,"hot","photo,keywords","Description",["Colour"],["Size"]]
+```
